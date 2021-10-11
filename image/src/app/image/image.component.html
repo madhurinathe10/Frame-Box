@@ -1,0 +1,18 @@
+
+  <div class="default">
+    <div *ngIf="!images?.length > 0">
+       <p> No image</p>
+      </div>
+      <div *ngIf="images?.length > 0">
+        <img [src]="imgDefault"/>
+      </div>
+  </div>
+
+<hr>
+<h3>Select Image</h3>
+<div class="main" *ngFor="let image of images">
+  <img [src]="image.url" (click)="imageClick(image)"/>
+  <button type="button" class="btn btn-danger" (click)="delete(image)">Delete</button>
+</div>
+
+
